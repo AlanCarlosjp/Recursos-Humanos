@@ -6,6 +6,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -39,6 +40,9 @@ public class WorkerController {
         boolean inserted = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(dto.getId()).toUri();
+        if(inserted == false){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Worker was not inserted");
+        }
         return ResponseEntity.created(uri).body(inserted);
     }
     @GetMapping(value = "/{id}")

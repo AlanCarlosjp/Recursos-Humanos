@@ -31,7 +31,7 @@ public class WorkerService {
 
     @Transactional
     public boolean insert(WorkerDto dto) {
-        if (dto.getId() != null && dto.getName() != null) {
+        if (dto.getName() != null) {
             Worker entity = copyDtoForEntity(dto);
             repository.save(entity);
             return true;
