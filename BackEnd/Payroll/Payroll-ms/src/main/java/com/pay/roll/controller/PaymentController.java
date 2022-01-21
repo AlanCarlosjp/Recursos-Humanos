@@ -1,5 +1,7 @@
 package com.pay.roll.controller;
 
+import com.pay.roll.dto.PaymentDto;
+import com.pay.roll.dto.WorkerDto;
 import com.pay.roll.entity.Payment;
 import com.pay.roll.service.PaymentService;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +20,12 @@ public class PaymentController {
         this.service = service;
     }
 
+
     @GetMapping(value = "/{id}/days/{days}")
-    public ResponseEntity getPayment(@PathVariable Long id, @PathVariable Integer days) throws Exception {
-       Payment payment = service.getPayment(id, days);
+    public ResponseEntity<PaymentDto> getPayment(@PathVariable Long id, @PathVariable Integer days) throws Exception {
+       PaymentDto payment = service.getPayment(id, days);
         return ResponseEntity.ok().body(payment);
     }
+
+
 }

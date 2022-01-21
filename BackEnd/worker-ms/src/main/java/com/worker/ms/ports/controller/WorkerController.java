@@ -2,7 +2,6 @@ package com.worker.ms.ports.controller;
 
 import com.worker.ms.dto.WorkerDto;
 import com.worker.ms.services.WorkerService;
-import org.springframework.core.env.Environment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -28,7 +27,7 @@ public class WorkerController {
             @RequestParam(value = "pages",defaultValue = "0") Integer pages,
             @RequestParam(value = "linesPerPage",defaultValue = "12") Integer linesPerPage,
             @RequestParam(value = "orderBy",defaultValue = "name") String orderBy,
-            @RequestParam(value = "orderBy ",defaultValue = "ASC") String direction
+            @RequestParam(value = "direction ",defaultValue = "ASC") String direction
     ){
         PageRequest pageRequest =  PageRequest.of(pages,linesPerPage, Sort.Direction.valueOf(direction),orderBy);
         Page<WorkerDto> list = service.findAllPaged(pageRequest);

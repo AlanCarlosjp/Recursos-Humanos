@@ -7,12 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Api-gateway" />
         <module name="Payroll-ms" />
         <module name="EurekServer-ms" />
         <module name="worker-ms" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Api-gateway" target="11" />
+      <module name="api-gateway" target="11" />
+      <module name="Api-getway" target="11" />
       <module name="EurekServer-ms" target="11" />
       <module name="Payroll-ms" target="11" />
       <module name="worker-ms" target="1.8" />
@@ -20,8 +24,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Api-gateway" options="-parameters" />
+      <module name="Api-getway" options="-parameters" />
       <module name="EurekServer-ms" options="-parameters" />
       <module name="Payroll-ms" options="-parameters" />
+      <module name="api-gateway" options="-parameters" />
       <module name="worker-ms" options="-parameters" />
     </option>
   </component>
