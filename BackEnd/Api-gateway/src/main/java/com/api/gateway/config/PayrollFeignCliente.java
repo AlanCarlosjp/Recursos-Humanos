@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @Component
-@FeignClient(name = "payroll",path = "/payroll")
+@FeignClient(name = "payment",path = "/payment")
 public interface PayrollFeignCliente {
 
     @GetMapping(value = "/{id}/days/{days}")
