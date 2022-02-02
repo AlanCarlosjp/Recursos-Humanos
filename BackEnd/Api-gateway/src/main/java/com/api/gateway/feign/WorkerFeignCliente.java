@@ -1,4 +1,4 @@
-package com.api.gateway.config;
+package com.api.gateway.feign;
 
 
 import com.api.gateway.dto.WorkerDto;

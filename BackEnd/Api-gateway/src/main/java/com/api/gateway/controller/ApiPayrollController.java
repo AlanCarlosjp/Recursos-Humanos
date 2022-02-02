@@ -1,6 +1,6 @@
 package com.api.gateway.controller;
 
-import com.api.gateway.config.PayrollFeignCliente;
+import com.api.gateway.feign.PayrollFeignCliente;
 import com.api.gateway.dto.PaymentDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +17,7 @@ public class ApiPayrollController {
     public ApiPayrollController(PayrollFeignCliente feignCliente) {
         this.feignCliente = feignCliente;
     }
+
 
     @GetMapping(value = "/{id}/days/{days}")
     public ResponseEntity getPayment(@PathVariable Long id, @PathVariable int days) throws Exception {

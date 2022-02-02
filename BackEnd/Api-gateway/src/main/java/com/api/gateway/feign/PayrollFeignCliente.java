@@ -1,8 +1,7 @@
-package com.api.gateway.config;
+package com.api.gateway.feign;
 
 
 import com.api.gateway.dto.PaymentDto;
-import com.api.gateway.dto.WorkerDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

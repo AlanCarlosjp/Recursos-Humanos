@@ -1,6 +1,6 @@
 package com.api.gateway.controller;
 
-import com.api.gateway.config.WorkerFeignCliente;
+import com.api.gateway.feign.WorkerFeignCliente;
 import com.api.gateway.dto.WorkerDto;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
